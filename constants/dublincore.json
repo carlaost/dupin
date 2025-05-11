@@ -1,0 +1,16 @@
+{
+    "title": "meta[name='dc.Title']",
+    "creator": "meta[name='dc.Creator']",
+    "subject": "meta[name='dc.Subject']",
+    "description": "meta[name='dc.Description']",
+    "publisher": "meta[name='dc.Publisher']",
+    "date": "meta[name='dc.Date']",
+    "type": "meta[name='dc.Type']",
+    "format": "meta[name='dc.Format']",
+    "identifier_doi": "meta[name='dc.Identifier'][scheme='doi']",
+    "identifier_publisher": "meta[name='dc.Identifier'][scheme='publisher-id']",
+    "language": "meta[name='dc.Language']",
+    "coverage": "meta[name='dc.Coverage']",
+    "keywords": "meta[name='keywords']",
+    "schema": "link[rel='schema.DC']"
+}
