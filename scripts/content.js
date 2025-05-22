@@ -89,8 +89,38 @@ function extractMetadata(metadataSchemas) {
 
 // Check if DOM contains, extract
 metadata = extractMetadata(metadataSchemas);
-console.log('dupin found:', metadata);
 
 // Save to... localStorage? maybe?
+if (metadata) {
+  // Prepare publication object
+  publication = {
+    title: metadata.citation_title || metadata.dc_Title,
+    author: metadata.citation_author || metadata.dc_Creator,
+    year: metadata.citation_year || metadata.dc_Date,
+    doi: metadata.citation_doi || metadata.identifier_doi,
+    author_institution: metadata.citation_author_institution || '',
+    author_orcid: metadata.citation_author_orcid || '',
+    author_email: metadata.citation_author_email || '',
+    authors: metadata.citation_authors || '',
+    journal_title: metadata.citation_journal_title || '',
+    url: metadata.citation_public_url || '',
+    times_seen: 1
+  }
+  const identifier = publication.doi || publication.title;
+
+  // Retrieve existing storage
+  chrome.storage.local.get({ history: {} }, function(result) {
+    let history = result.history;
+    if (history[identifier]) {
+      console.log('youve seen this before');
+      history[identifier].times_seen += 1;
+      chrome.storage.local.set({ history: history });
+    } else {
+      console.log('adding to history');
+      history[identifier] = publication;
+      chrome.storage.local.set({ history: history });
+    }
+  });
+}
 
 // Inject a badge: Dupin saw this
