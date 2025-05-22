@@ -1,6 +1,59 @@
 <html>
+  <head>
+    <style>
+      body {
+          width: 400px;
+          padding: 16px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+
+      .history-item {
+          border: 1px solid #e0e0e0;
+          border-radius: 4px;
+          margin-bottom: 12px;
+          padding: 12px;
+          background-color: #f8f9fa;
+      }
+
+      .history-item h3 {
+          margin: 0 0 8px 0;
+          color: #2c3e50;
+          font-size: 14px;
+      }
+
+      .metadata {
+          font-size: 12px;
+          color: #555;
+      }
+
+      .metadata p {
+          margin: 4px 0;
+      }
+
+      .empty-message {
+          text-align: center;
+          color: #666;
+          font-style: italic;
+      }
+
+      #clearHistory {
+          background-color: #dc3545;
+          color: white;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-bottom: 16px;
+      }
+
+      #clearHistory:hover {
+          background-color: #c82333;
+      }
+  </style>
+  </head>
   <body>
-    <h1>Yello Extensions</h1>
+    <h1>Dupin at your service</h1>
+    <div id="history"></div>
     <script src="popup.js"></script>
   </body>
 </html>

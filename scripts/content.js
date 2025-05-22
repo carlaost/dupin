@@ -104,7 +104,8 @@ if (metadata) {
     authors: metadata.citation_authors || '',
     journal_title: metadata.citation_journal_title || '',
     url: metadata.citation_public_url || '',
-    times_seen: 1
+    times_seen: 1,
+    last_seen_on: new Date().toISOString()
   }
   const identifier = publication.doi || publication.title;
 

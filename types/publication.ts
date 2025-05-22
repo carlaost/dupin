@@ -9,4 +9,6 @@ type Publication = {
   authors: string[];
   journal_title: string;
   url: string;
+  times_seen: number;
+  last_seen_on: string;
 }
